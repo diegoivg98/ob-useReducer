@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useContext } from "react";
 
 // ACTIONS
 const INCREMENT = "INCREMENT";
@@ -7,6 +7,17 @@ const RESET = "REST";
 
 /* Creating a context object. */
 const myContext = React.createContext(null);
+
+/**
+ * Points is a function that returns a paragraph that displays the count from the state of the
+ * myContext object.
+ */
+const Points = () => {
+    const state = useContext(myContext)
+    return (
+        <p>Points: {state.count}</p>
+    )
+}
 
 const Counter = () => {
     //Estado inicial
@@ -43,7 +54,8 @@ const Counter = () => {
     return (
         <myContext.Provider value={state}>
             <div>
-                <p>Points: {state.count}</p>
+                {/* <p>Points: {state.count}</p> */}
+                <Points />
                 <button onClick={() => dispatch({ type: INCREMENT, payload: { quantity: 1 } })}>INCREMENT</button>
                 <button onClick={() => dispatch({ type: DECREMENT, payload: { quantity: 1 } })}>DECREMENT</button>
                 <button onClick={() => dispatch({ type: RESET })}>RESET</button>
