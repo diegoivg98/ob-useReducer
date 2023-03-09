@@ -1,5 +1,6 @@
 import "./App.css";
-import LoginUseState from "./components/LoginUseState";
+import LoginUseReducer from "./components/LoginUseReducer";
+// import LoginUseState from "./components/LoginUseState";
 // import Counter from "./components/Counter";
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
     <div className="App">
       <h1>useReducer Example</h1>
       {/* <Counter /> */}
-      <LoginUseState/>
+      {/* <LoginUseState/> */}
+      <LoginUseReducer/>
     </div>
   );
 }
