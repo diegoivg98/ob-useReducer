@@ -1,11 +1,13 @@
 import "./App.css";
-import Counter from "./components/Counter";
+import LoginUseState from "./components/LoginUseState";
+// import Counter from "./components/Counter";
 
 function App() {
   return (
     <div className="App">
       <h1>useReducer Example</h1>
-      <Counter />
+      {/* <Counter /> */}
+      <LoginUseState/>
     </div>
   );
 }
